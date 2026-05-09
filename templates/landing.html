@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CropWise AI | Smart Crop Recommendation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<nav class="navbar glass-nav">
+    <div class="logo">
+        <i data-lucide="sprout"></i>
+        CropWise AI
+    </div>
+
+    <div class="nav-links">
+        <a href="#features"><i data-lucide="leaf"></i> Features</a>
+        <a href="#how"><i data-lucide="workflow"></i> How It Works</a>
+        <a href="/login"><i data-lucide="log-in"></i> Login</a>
+        <a href="/signup" class="btn-nav green">
+            <i data-lucide="rocket"></i> Get Started
+        </a>
+    </div>
+</nav>
+
+<section class="landing-hero">
+    <div class="hero-content fade-up">
+        <span class="status-pill">
+            <i data-lucide="activity"></i>
+            AI-Powered Farming Assistant
+        </span>
+
+        <h1>Recommend the Best Crop Based on Soil Condition</h1>
+
+        <p>
+            CropWise AI helps farmers choose the most suitable crop using soil nutrients,
+            temperature, humidity, pH level, and rainfall data.
+        </p>
+
+        <div class="hero-actions">
+            <a href="/signup" class="main-btn">
+                <i data-lucide="sparkles"></i>
+                Start Recommendation
+            </a>
+
+            <a href="/login" class="secondary-btn">
+                <i data-lucide="user-check"></i>
+                Login Account
+            </a>
+        </div>
+
+        <div class="hero-stats">
+            <div>
+                <strong>7</strong>
+                <span>Soil Inputs</span>
+            </div>
+            <div>
+                <strong>22</strong>
+                <span>Crop Classes</span>
+            </div>
+            <div>
+                <strong>RF</strong>
+                <span>AI Model</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-visual fade-up">
+        <div class="floating-card main-farm-card">
+            <div class="card-header">
+                <div>
+                    <span>Live Soil Scan</span>
+                    <h3>Smart Crop Match</h3>
+                </div>
+                <i data-lucide="scan-search"></i>
+            </div>
+
+            <div class="soil-meter">
+                <div>
+                    <span>Nitrogen</span>
+                    <strong>Optimal</strong>
+                </div>
+                <div class="meter-line">
+                    <span style="width: 82%;"></span>
+                </div>
+            </div>
+
+            <div class="soil-meter">
+                <div>
+                    <span>Humidity</span>
+                    <strong>Healthy</strong>
+                </div>
+                <div class="meter-line">
+                    <span style="width: 74%;"></span>
+                </div>
+            </div>
+
+            <div class="soil-meter">
+                <div>
+                    <span>Rainfall</span>
+                    <strong>Suitable</strong>
+                </div>
+                <div class="meter-line">
+                    <span style="width: 68%;"></span>
+                </div>
+            </div>
+
+            <div class="crop-result-preview">
+                <i data-lucide="badge-check"></i>
+                <div>
+                    <span>Recommended Crop</span>
+                    <strong>Rice / Maize / Banana</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="mini-float-card card-one">
+            <i data-lucide="cloud-rain"></i>
+            <span>Rainfall Ready</span>
+        </div>
+
+        <div class="mini-float-card card-two">
+            <i data-lucide="thermometer-sun"></i>
+            <span>Climate Based</span>
+        </div>
+    </div>
+</section>
+
+<section class="features-section" id="features">
+    <div class="section-title fade-up">
+        <span class="status-pill">
+            <i data-lucide="layers-3"></i>
+            System Features
+        </span>
+        <h2>Built for Smarter and Faster Farming Decisions</h2>
+        <p>
+            The system provides crop recommendations with explanations, fertilizer suggestions,
+            and planting tips for farmers.
+        </p>
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-card fade-up">
+            <div class="feature-icon">
+                <i data-lucide="brain-circuit"></i>
+            </div>
+            <h3>AI Crop Prediction</h3>
+            <p>Uses your trained Random Forest model to recommend the most suitable crop.</p>
+        </div>
+
+        <div class="feature-card fade-up">
+            <div class="feature-icon">
+                <i data-lucide="image"></i>
+            </div>
+            <h3>Crop Image Display</h3>
+            <p>Shows the predicted crop with a clear image for easier farmer understanding.</p>
+        </div>
+
+        <div class="feature-card fade-up">
+            <div class="feature-icon">
+                <i data-lucide="badge-info"></i>
+            </div>
+            <h3>Smart Explanation</h3>
+            <p>Explains why the selected crop fits the soil and environmental condition.</p>
+        </div>
+
+        <div class="feature-card fade-up">
+            <div class="feature-icon">
+                <i data-lucide="package-plus"></i>
+            </div>
+            <h3>Fertilizer Tips</h3>
+            <p>Provides fertilizer suggestions to help improve growth and crop quality.</p>
+        </div>
+
+        <div class="feature-card fade-up">
+            <div class="feature-icon">
+                <i data-lucide="clock-3"></i>
+            </div>
+            <h3>Prediction History</h3>
+            <p>Saves previous recommendations for monitoring and future reference.</p>
+        </div>
+
+        <div class="feature-card fade-up">
+            <div class="feature-icon">
+                <i data-lucide="shield-check"></i>
+            </div>
+            <h3>Secure Accounts</h3>
+            <p>Includes login and signup with PostgreSQL database storage.</p>
+        </div>
+    </div>
+</section>
+
+<section class="how-section" id="how">
+    <div class="section-title fade-up">
+        <span class="status-pill">
+            <i data-lucide="workflow"></i>
+            Process Flow
+        </span>
+        <h2>How CropWise AI Works</h2>
+    </div>
+
+    <div class="steps-grid">
+        <div class="step-card fade-up">
+            <span>01</span>
+            <i data-lucide="user-plus"></i>
+            <h3>Create Account</h3>
+            <p>The farmer creates an account so every crop analysis can be saved securely.</p>
+        </div>
+
+        <div class="step-card fade-up">
+            <span>02</span>
+            <i data-lucide="clipboard-edit"></i>
+            <h3>Enter Soil Data</h3>
+            <p>Input nitrogen, phosphorus, potassium, temperature, humidity, pH, and rainfall.</p>
+        </div>
+
+        <div class="step-card fade-up">
+            <span>03</span>
+            <i data-lucide="bot"></i>
+            <h3>AI Analysis</h3>
+            <p>The trained Random Forest model analyzes the values and predicts the best crop.</p>
+        </div>
+
+        <div class="step-card fade-up">
+            <span>04</span>
+            <i data-lucide="sprout"></i>
+            <h3>View Recommendation</h3>
+            <p>The system displays the crop image, reason, fertilizer suggestion, and planting tips.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section fade-up">
+    <div class="cta-card">
+        <span class="status-pill">
+            <i data-lucide="sparkles"></i>
+            Start Smart Farming
+        </span>
+        <h2>Help Farmers Choose the Right Crop with AI</h2>
+        <p>
+            Make crop selection faster, easier, and more reliable using soil-based recommendation.
+        </p>
+        <a href="/signup" class="main-btn">
+            <i data-lucide="arrow-right"></i>
+            Create Account Now
+        </a>
+    </div>
+</section>
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>

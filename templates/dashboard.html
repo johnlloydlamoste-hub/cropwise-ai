@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Analysis | CropWise AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<nav class="navbar glass-nav">
+    <div class="logo">
+        <i data-lucide="sprout"></i>
+        CropWise AI
+    </div>
+
+    <div class="nav-links">
+        <a href="/dashboard"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+        <a href="/history"><i data-lucide="clock-3"></i> History</a>
+        <a href="/logout" class="logout-btn"><i data-lucide="log-out"></i> Logout</a>
+    </div>
+</nav>
+
+<section class="predict-page">
+
+    <div class="page-intro fade-up">
+        <span class="status-pill">
+            <i data-lucide="activity"></i>
+            AI Soil Intelligence
+        </span>
+
+        <h1>Find the Best Crop for Your Soil</h1>
+        <p>
+            Enter your soil nutrients and environmental data. CropWise AI will instantly recommend
+            the most suitable crop, explain why it fits, and provide farming tips.
+        </p>
+    </div>
+
+    <div class="analysis-layout">
+
+        <form id="predictForm" class="modern-form fade-up">
+            <div class="form-header">
+                <div>
+                    <h2>Soil & Climate Input</h2>
+                    <p>Fill in the values based on your soil test result.</p>
+                </div>
+                <div class="form-icon">
+                    <i data-lucide="leaf"></i>
+                </div>
+            </div>
+
+            <div class="input-grid">
+
+                <div class="input-group">
+                    <label><i data-lucide="flask-conical"></i> Nitrogen (N)</label>
+                    <input type="number" step="any" name="nitrogen" placeholder="e.g. 90" required>
+                </div>
+
+                <div class="input-group">
+                    <label><i data-lucide="atom"></i> Phosphorus (P)</label>
+                    <input type="number" step="any" name="phosphorus" placeholder="e.g. 42" required>
+                </div>
+
+                <div class="input-group">
+                    <label><i data-lucide="blocks"></i> Potassium (K)</label>
+                    <input type="number" step="any" name="potassium" placeholder="e.g. 43" required>
+                </div>
+
+                <div class="input-group">
+                    <label><i data-lucide="thermometer-sun"></i> Temperature</label>
+                    <input type="number" step="any" name="temperature" placeholder="°C" required>
+                </div>
+
+                <div class="input-group">
+                    <label><i data-lucide="droplets"></i> Humidity</label>
+                    <input type="number" step="any" name="humidity" placeholder="%" required>
+                </div>
+
+                <div class="input-group">
+                    <label><i data-lucide="gauge"></i> pH Level</label>
+                    <input type="number" step="any" name="ph" placeholder="e.g. 6.5" required>
+                </div>
+
+                <div class="input-group full">
+                    <label><i data-lucide="cloud-rain"></i> Rainfall</label>
+                    <input type="number" step="any" name="rainfall" placeholder="mm" required>
+                </div>
+
+            </div>
+
+            <button type="submit" class="analyze-btn">
+                <i data-lucide="sparkles"></i>
+                Analyze Best Crop
+            </button>
+        </form>
+
+        <div class="result-panel fade-up">
+
+            <div id="emptyState" class="empty-state">
+                <div class="pulse-icon">
+                    <i data-lucide="scan-search"></i>
+                </div>
+                <h2>Ready for Smart Recommendation</h2>
+                <p>
+                    Your AI-generated crop recommendation will appear here with image,
+                    explanation, fertilizer advice, and planting tips.
+                </p>
+
+                <div class="mini-stats">
+                    <div>
+                        <strong>7</strong>
+                        <span>Inputs</span>
+                    </div>
+                    <div>
+                        <strong>22</strong>
+                        <span>Crops</span>
+                    </div>
+                    <div>
+                        <strong>RF</strong>
+                        <span>Model</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loader hidden" id="loader"></div>
+
+            <div id="resultContent" class="result-content hidden">
+                <div class="crop-image-wrap">
+                    <img id="cropImage" src="" alt="Crop Image">
+                    <span class="recommended-badge">
+                        <i data-lucide="badge-check"></i>
+                        Recommended Crop
+                    </span>
+                </div>
+
+                <h2 id="cropName"></h2>
+
+                <div class="confidence-card">
+                    <i data-lucide="trending-up"></i>
+                    <div>
+                        <strong>Best Match Detected</strong>
+                        <p>Based on your soil nutrients, pH, rainfall, humidity, and temperature.</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4><i data-lucide="circle-help"></i> Why this crop?</h4>
+                    <p id="cropReason"></p>
+                </div>
+
+                <div class="info-box">
+                    <h4><i data-lucide="package-plus"></i> Fertilizer Suggestion</h4>
+                    <p id="cropFertilizer"></p>
+                </div>
+
+                <div class="info-box">
+                    <h4><i data-lucide="lightbulb"></i> Planting Tips</h4>
+                    <p id="cropTips"></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>

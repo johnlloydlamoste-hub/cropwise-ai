@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up | CropWise AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="auth-body">
+
+<nav class="navbar glass-nav">
+    <div class="logo">
+        <i data-lucide="sprout"></i>
+        CropWise AI
+    </div>
+
+    <div class="nav-links">
+        <a href="/"><i data-lucide="home"></i> Home</a>
+        <a href="/login" class="btn-nav">
+            <i data-lucide="log-in"></i> Login
+        </a>
+    </div>
+</nav>
+
+<section class="auth-modern-section">
+    <div class="auth-left fade-up">
+        <span class="status-pill">
+            <i data-lucide="sprout"></i>
+            Start Smart Farming
+        </span>
+
+        <h1>Create Your CropWise Account</h1>
+        <p>
+            Register to start receiving crop recommendations based on soil nutrients,
+            climate condition, pH level, humidity, and rainfall.
+        </p>
+
+        <div class="auth-benefits">
+            <div>
+                <i data-lucide="database"></i>
+                <span>PostgreSQL account storage</span>
+            </div>
+            <div>
+                <i data-lucide="scan-search"></i>
+                <span>Real-time crop analysis</span>
+            </div>
+            <div>
+                <i data-lucide="package-plus"></i>
+                <span>Fertilizer suggestions</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-card modern-auth-card fade-up">
+        <div class="auth-icon">
+            <i data-lucide="user-plus"></i>
+        </div>
+
+        <h2>Create Account</h2>
+        <p>Fill in your details to begin using the AI crop recommendation system.</p>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <div class="alert {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
+
+        <form method="POST">
+            <div class="input-group">
+                <label><i data-lucide="user"></i> Full Name</label>
+                <input type="text" name="fullname" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="input-group">
+                <label><i data-lucide="mail"></i> Email Address</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label><i data-lucide="lock-keyhole"></i> Password</label>
+                <input type="password" name="password" placeholder="Create a password" required>
+            </div>
+
+            <button type="submit">
+                <i data-lucide="rocket"></i>
+                Create Account
+            </button>
+        </form>
+
+        <p class="small-text">
+            Already have an account? <a href="/login">Login here</a>
+        </p>
+    </div>
+</section>
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>
