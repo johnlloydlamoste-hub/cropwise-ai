@@ -1,10 +1,10 @@
+gunicorn
+psycopg2-binary
 Flask
 Flask-SQLAlchemy
 Flask-Bcrypt
 Flask-Login
 python-dotenv
-psycopg2-binary
-pandas
 numpy
+pandas
 scikit-learn
-gunicorn
