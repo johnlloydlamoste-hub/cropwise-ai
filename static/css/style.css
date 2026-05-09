@@ -1386,3 +1386,294 @@ tr:hover {
         padding: 15px;
     }
 }
+/* =========================
+   FULL MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 1024px) {
+    .landing-hero,
+    .analysis-layout,
+    .dashboard-grid,
+    .auth-modern-section {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+        min-height: auto;
+        margin-top: 30px;
+    }
+
+    .modern-auth-card {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .features-grid,
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background:
+            radial-gradient(circle at top, rgba(34, 197, 94, 0.22), transparent 35%),
+            linear-gradient(135deg, #111827, #1f2937, #064e3b);
+    }
+
+    .navbar {
+        padding: 16px 5%;
+        flex-direction: column;
+        gap: 16px;
+        position: relative;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-links a,
+    .navbar a {
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    .btn-nav,
+    .logout-btn {
+        padding: 9px 14px;
+    }
+
+    .landing-hero,
+    .features-section,
+    .how-section,
+    .cta-section,
+    .predict-page,
+    .dashboard,
+    .history-section,
+    .auth-modern-section {
+        padding: 38px 5%;
+    }
+
+    .hero-content h1,
+    .page-intro h1,
+    .auth-left h1 {
+        font-size: 38px;
+        line-height: 1.1;
+    }
+
+    .hero-content p,
+    .page-intro p,
+    .auth-left p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .main-btn,
+    .secondary-btn,
+    .analyze-btn,
+    .auth-card button,
+    .predict-card button {
+        width: 100%;
+        min-height: 54px;
+    }
+
+    .hero-stats,
+    .mini-stats,
+    .features-grid,
+    .steps-grid,
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-farm-card,
+    .modern-form,
+    .result-panel,
+    .auth-card,
+    .predict-card,
+    .result-card,
+    .cta-card,
+    .feature-card,
+    .step-card {
+        padding: 24px;
+        border-radius: 24px;
+    }
+
+    .mini-float-card {
+        position: static;
+        margin-top: 14px;
+        justify-content: center;
+    }
+
+    .form-header {
+        flex-direction: column;
+    }
+
+    .result-panel,
+    .result-card {
+        min-height: auto;
+    }
+
+    .crop-image-wrap img,
+    #resultContent img {
+        height: 210px;
+    }
+
+    #cropName {
+        font-size: 34px;
+    }
+
+    .recommended-badge {
+        left: 12px;
+        bottom: 28px;
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .confidence-card {
+        flex-direction: column;
+    }
+
+    .auth-benefits div {
+        padding: 15px;
+    }
+
+    .section-title h2,
+    .cta-card h2 {
+        font-size: 32px;
+    }
+
+    .table-wrapper {
+        padding: 14px;
+        border-radius: 20px;
+    }
+
+    table {
+        min-width: 850px;
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links a {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 14px;
+        border-radius: 14px;
+        background: rgba(31, 41, 55, 0.55);
+    }
+
+    .hero-content h1,
+    .page-intro h1,
+    .auth-left h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p,
+    .page-intro p,
+    .auth-left p {
+        font-size: 15px;
+    }
+
+    .status-pill {
+        font-size: 13px;
+        padding: 9px 14px;
+    }
+
+    .main-farm-card,
+    .modern-form,
+    .result-panel,
+    .auth-card,
+    .predict-card,
+    .result-card,
+    .cta-card,
+    .feature-card,
+    .step-card {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .card-header h3,
+    .form-header h2,
+    .predict-card h2 {
+        font-size: 24px;
+    }
+
+    .input-group input,
+    .auth-card input,
+    .predict-card input {
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    .crop-image-wrap img,
+    #resultContent img {
+        height: 180px;
+        border-radius: 20px;
+    }
+
+    #cropName {
+        font-size: 30px;
+    }
+
+    .info-box,
+    .confidence-card {
+        padding: 15px;
+        border-radius: 18px;
+    }
+
+    .pulse-icon {
+        width: 78px;
+        height: 78px;
+    }
+
+    .pulse-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .empty-state h2 {
+        font-size: 24px;
+    }
+
+    .auth-icon {
+        width: 62px;
+        height: 62px;
+        border-radius: 20px;
+    }
+
+    .auth-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+}
